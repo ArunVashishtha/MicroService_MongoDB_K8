@@ -1,6 +1,6 @@
 # Project Name
 
-Project description goes here.
+This is sample asp.net core web api using .net 6.0 and it is using mongo db for database.You can create a docker image and push to docker hub.Using docker hub image, you can install that image in any kuberentes clusters.
 
 ## Table of Contents
 
