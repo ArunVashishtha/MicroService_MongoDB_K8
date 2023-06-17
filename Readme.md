@@ -32,6 +32,27 @@ Docker images for this project are hosted on [Docker Hub](https://hub.docker.com
 ## Installation
 You can download the code for given repository and after dowloading build the project and run locally or globally using docker hub image.
 
+## Build an image
+Download the source code, and build your image using below steps:
+
+    - Build the Docker image: Open a terminal or command prompt, navigate to the directory containing the Dockerfile, and run the following command:
+    docker build -t your-dockerhub-username/your-image-name:tag .
+
+Replace your-dockerhub-username, your-image-name, and tag with appropriate values. The . at the end specifies the build context as the current directory.
+
+    - Log in to Docker Hub: Run the following command and provide your Docker Hub credentials when prompted:
+    docker login
+
+    - Tag the Docker image: After a successful build, tag the image with your Docker Hub repository name:
+    docker tag your-dockerhub-username/your-image-name:tag your-dockerhub-username/your-image-name:tag
+
+Replace your-dockerhub-username, your-image-name, and tag with appropriate values.
+
+    - Push the Docker image to Docker Hub: Run the following command to push the tagged image to Docker Hub:
+    docker push your-dockerhub-username/your-image-name:tag
+
+Replace your-dockerhub-username, your-image-name, and tag with appropriate values.
+
 ## API Endpoint
 The service API tier can be accessed at the following URL to view the records from the backend tier:
 
