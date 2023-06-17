@@ -26,9 +26,10 @@ The code for this project can be found on [GitHub](https://github.com/ArunVashis
 
 Docker images for this project are hosted on [Docker Hub](https://hub.docker.com/r/arunvashishtha/microservicewithmongo).
 
-To pull the Docker image, use the following command:
+ - To pull the Docker image, use the following command:
+   docker pull arunvashishtha/microservicewithmongo
 
-docker pull arunvashishtha/microservicewithmongo
+   - Latest version is - docker pull arunvashishtha/microservicewithmongo:1.1
 
 ## Installation
 You can download the code for given repository and after dowloading build the project and run locally or globally using docker hub image.
