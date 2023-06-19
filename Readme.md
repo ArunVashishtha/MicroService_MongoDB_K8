@@ -26,7 +26,8 @@ The code for this project can be found on [GitHub](https://github.com/ArunVashis
 
 Docker images for this project are hosted on [Docker Hub](https://hub.docker.com/r/arunvashishtha/microservicewithmongo).
 
-    - To pull the Docker image, use the following command:
+To pull the Docker image, use the following command:
+
     docker pull arunvashishtha/microservicewithmongo
 
 ## Installation
@@ -35,20 +36,23 @@ You can download the code for given repository and after dowloading build the pr
 ## Build an image
 Download the source code, and build your image using below steps:
 
-    - Build the Docker image: Open a terminal or command prompt, navigate to the directory containing the Dockerfile, and run the following command:
+Build the Docker image: Open a terminal or command prompt, navigate to the directory containing the Dockerfile, and run the following command:
+
     docker build -t your-dockerhub-username/your-image-name:tag .
 
 Replace your-dockerhub-username, your-image-name, and tag with appropriate values. The . at the end specifies the build context as the current directory.
+Log in to Docker Hub: Run the following command and provide your Docker Hub credentials when prompted:
 
-    - Log in to Docker Hub: Run the following command and provide your Docker Hub credentials when prompted:
     docker login
 
-    - Tag the Docker image: After a successful build, tag the image with your Docker Hub repository name:
+Tag the Docker image: After a successful build, tag the image with your Docker Hub repository name:
+
     docker tag your-dockerhub-username/your-image-name:tag your-dockerhub-username/your-image-name:tag
 
 Replace your-dockerhub-username, your-image-name, and tag with appropriate values.
 
-    - Push the Docker image to Docker Hub: Run the following command to push the tagged image to Docker Hub:
+    Push the Docker image to Docker Hub: Run the following command to push the tagged image to Docker Hub:
+    
     docker push your-dockerhub-username/your-image-name:tag
 
 Replace your-dockerhub-username, your-image-name, and tag with appropriate values.
@@ -56,21 +60,27 @@ Replace your-dockerhub-username, your-image-name, and tag with appropriate value
 ## API Endpoint
 The service API tier can be accessed at the following URL to view the records from the backend tier:
 
-http://34.170.168.250/items
+    http://34.170.168.250/items
 
 ## Kubernetes Deployment
 To deploy the pods for the above image in Kubernetes, execute the following commands:
 
-    - Create the MongoDB secrets:
+- Create the MongoDB secrets:
+
     kubectl apply -f mongodb-secrets.yaml
 
-    - Create the MongoDB ConfigMap:
+- Create the MongoDB ConfigMap:
+
     kubectl apply -f mongodb-configmap.yaml
 
-    - Create the MongoDB deployment:
-    kubectl apply -f mongodb-deployment.yaml
+- Create the MongoDB deployment:
 
-    - Create the catalog deployment:
+  kubectl apply -f mongodb-deployment.yaml
+
+  Before applying the below command, please check the image name in the catalog-deployment.yaml file it should same as it is given in the repository or your can update image name in this file as per your image and tag.
+
+- Create the catalog deployment:
+
     kubectl apply -f catalog-deployment.yaml
 
 Make sure to update the file names to match your actual YAML files.
